@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja Gamer</title>
+    <title>Horizon</title>
     <link rel="stylesheet" href="./src/css/estilo.css">
 </head>
 <body>
@@ -19,14 +19,68 @@
         </nav>
     </header>
 
-    <section class="destaques">
-        <div class="destaques">
-            <button class="btn anterior" onclick="voltarImagem()">&#10094;</button>
-            <img id="imagemDestaque" src="./src/assets/placa_video.png" alt="Imagem de destaque">
-            <button class="btn proximo" onclick="passarImagem()">&#10095;</button>
-        </div>
-        <h1>Destaques</h1>
-    </section>
+    <main class="pagina-home">
+        <section class="home-hero">
+            <div class="home-hero-texto">
+                <h1>Horizon</h1>
+                <p>
+                    Tudo do bom e do melhor para o seu setup em um so lugar.
+                </p>
+                <div class="home-acoes">
+                    <a href="./pages/portifolio.html">Ver produtos</a>
+                    <a href="./pages/contato.html">Fale conosco</a>
+                </div>
+            </div>
+
+            <div class="home-hero-produto">
+                <img src="./src/assets/gabinete.png" alt="Gabinete gamer">
+            </div>
+        </section>
+
+        <section class="home-destaques">
+            <div class="home-titulo-secao">
+                <h2>Destaques</h2>
+                <p>Produtos principais para dar mais forca ao seu setup.</p>
+            </div>
+
+            <div class="carrossel-destaques">
+                <button class="btn anterior" onclick="voltarImagem()">&#10094;</button>
+                <img id="imagemDestaque" src="./src/assets/placa_video.png" alt="Produto em destaque">
+                <button class="btn proximo" onclick="passarImagem()">&#10095;</button>
+            </div>
+        </section>
+
+        <section class="home-categorias">
+            <h2>Categorias</h2>
+
+            <div class="grade-home-categorias">
+                <article>
+                    <img src="./src/assets/processador.png" alt="Processador gamer">
+                    <h3>Componentes</h3>
+                </article>
+
+                <article>
+                    <img src="./src/assets/teclado.png" alt="Teclado gamer">
+                    <h3>Periféricos</h3>
+                </article>
+
+                <article>
+                    <img src="./src/assets/monitor.png" alt="Monitor gamer">
+                    <h3>Monitores</h3>
+                </article>
+
+                <article>
+                    <img src="./src/assets/cadeira.png" alt="Cadeira gamer">
+                    <h3>Setup</h3>
+                </article>
+            </div>
+        </section>
+
+        <section class="home-chamada">
+            <h2>Pronto para montar seu setup?</h2>
+            <a href="./pages/contato.html">Solicitar atendimento</a>
+        </section>
+    </main>
 
     <script src="./src/js/script.js"></script>
 </body>
