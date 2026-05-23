@@ -27,10 +27,17 @@ header .logo{
     width: 90px;
     height: 90px;
     border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+header .logo:hover{
+    box-shadow: 0 0 18px var(--color7);
+    transform: rotate(-6deg) scale(1.06);
 }
 
 header{
-    background-color: var(--color1);
+    background-color: rgba(28, 0, 57, 0.95);
+    border: 2px solid rgba(255, 0, 255, 0.45);
     color: var(--preto);
     padding: 20px;
     display: flex;
@@ -38,6 +45,8 @@ header{
     align-items: center;
     box-shadow: 0 9px 9px var(--color2);
     border-radius: 50px;
+    animation: surgirHeader 0.7s ease both;
+    backdrop-filter: blur(6px);
 }
 
 header nav ul{
@@ -47,14 +56,47 @@ header nav ul{
 }
 
 header nav ul li a{
+    position: relative;
     text-decoration:none;
     color:var(--color4);
     font-weight:800;
     font-family: Arial, Helvetica, sans-serif;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 header nav ul li a:hover{
-    color:var(--branco);
+    color:var(--color7);
+    transform: translateY(-3px);
+}
+
+header nav ul li a::after{
+    content: "";
+    position: absolute;
+    left: 5px;
+    right: 5px;
+    bottom: -5px;
+    height: 3px;
+    background-color: var(--color7);
+    border-radius: 10px;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+header nav ul li a:hover::after{
+    transform: scaleX(1);
+}
+
+@keyframes surgirHeader {
+    from {
+        opacity: 0;
+        transform: translateY(-18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
@@ -665,6 +707,17 @@ header nav ul li a:hover{
 }
 
 @media (max-width: 600px) {
+  header {
+    border-radius: 28px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  header nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .home-hero,
   .grade-home-categorias {
     grid-template-columns: 1fr;
